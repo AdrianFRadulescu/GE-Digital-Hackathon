@@ -21,6 +21,13 @@ public class Area {
         }
         return danger;
     }
+    public boolean isDangerous(int threshold)
+    {
+      if(getDangerQuantum()<threshold)
+          return false;
+          return true;
+    }
+
     public String toStringAllCrimes()
     {
         String allCrimes="";
