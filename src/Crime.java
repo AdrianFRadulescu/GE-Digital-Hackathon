@@ -5,11 +5,7 @@
 /**
  * Class that structures the information of a crime that has been comitted
  */
-public class Crime implements CrimeCathegory {
-    int category;
-    float latitude,longitude;
-    String streetName,streetID;
-    public Crime(int category,float latitude,float longitude,String streetName,String streetID)
+
 public class Crime {
 
 
