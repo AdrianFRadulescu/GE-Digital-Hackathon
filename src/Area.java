@@ -1,20 +1,14 @@
 /**
  * Created by Ciprian on 03/10/17.
  */
-public class Location {
-	
-    public Street streetName;
+public class Area {
+    Location location;
     Crime[] listOfCrimes;
     int dangerQuantum;
-    private String latitude;
-    private String longitude;
-    
-    public Location(Street streetName,Crime[] listOfCrimes, String latitude, String longitude)
+    public Area(Location location,Crime[] listOfCrimes)
     {
-    	this.latitude = latitude;
-    	this.longitude = longitude;
         this.listOfCrimes=listOfCrimes;
-        this.streetName =streetName;
+        this.location=location;
         this.dangerQuantum=dangerZone();
     }
 
@@ -23,7 +17,7 @@ public class Location {
         int danger=0;
         for (int i=0;i<listOfCrimes.length;i++)
         {
-         danger+=listOfCrimes[i].danger();
+            danger+=listOfCrimes[i].danger();
         }
         return danger;
     }
