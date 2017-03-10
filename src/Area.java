@@ -1,11 +1,11 @@
 /**
  * Created by Ciprian on 03/10/17.
  */
-public class Location {
+public class Area {
     public String nameLocation;
     Crime[] listOfCrimes;
     int dangerQuantum;
-    public Location(String nameLocation,Crime[] listOfCrimes)
+    public Area(String nameLocation,Crime[] listOfCrimes)
     {
         this.listOfCrimes=listOfCrimes;
         this.nameLocation=nameLocation;
