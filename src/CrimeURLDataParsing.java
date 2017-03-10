@@ -8,12 +8,40 @@ public class CrimeURLDataParsing {
     private static String[] fStreetParameters   = {"id", "name"};
     private static String[] fOutcomeResult      = {"category", "date"};
 
-    public static Crime praseCrime(){
+    /**
+     * Parses a given string into a Crime object
+     * @param _args = the given string
+     * @return  a new Crime object
+     */
+
+    public static Crime praseCrime(String _args){
 
 
-        return new Crime();
+        return null /*new Crime()*/;
+    }
+
+    /**
+     * Parses a given string into a Location object
+     * @param _args = the given string
+     * @return a new Location object
+     */
+
+    public static Location parseLocation(String _args){
+
+
+
+        return null /*new Location()*/;
     }
 
 
+    public static Street parseStreet(String _args){
+
+        System.out.println(_args.lastIndexOf(fStreetParameters[0]));
+
+        System.out.println(_args.charAt(_args.lastIndexOf(fStreetParameters[0])));
+
+
+        return null;
+    }
 
 }
