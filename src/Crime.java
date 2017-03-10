@@ -10,12 +10,26 @@ public class Crime implements CrimeCathegory {
     float latitude,longitude;
     String streetName,streetID;
     public Crime(int category,float latitude,float longitude,String streetName,String streetID)
+public class Crime {
+
+
+
+	private Location locationName;
+	private OutcomeStatus outcomeStatus;
+	private String category;
+	private String persistentId;
+	private String id;
+	private String locationSubtype;
+	private String date;
+
+    public Crime(Location locationName, OutcomeStatus outcomeStatus, String category, String persistentId, String id, String locationSubtype, String date )
     {
-        this.category=category;
-        this.latitude=latitude;
-        this.longitude=longitude;
-        this.streetName=streetName;
-        this.streetID=streetID;
+        this.locationName = locationName;
+        this.outcomeStatus = outcomeStatus;
+        this.date = date;
+        this.category = category;
+        this.id = id;
+        this.locationSubtype = locationSubtype;
     }
 
     /**
@@ -26,102 +40,26 @@ public class Crime implements CrimeCathegory {
     {
         switch (this.category)
         {
-            case (AntiSocialbehaviour):
+            case ("AntiSocialbehaviour"):
                 return 1;
-            case (burglary):
+            case ("burglary"):
                 return 5;
-            case (robbery):
+            case ("robbery"):
                 return 20;
-            case vehicleCrime:
+            case "vehicleCrime":
                 return 5;
-            case violentCrime:
+            case "violentCrime":
                 return 30;
-            case otherCrime:
+            case "otherCrime":
                 return 10;
              default:
                 return 0;
-
         }
     }
-
-    /**
-     *
-     * @return latitute
-     */
-    public float getLatitude() {
-        return latitude;
-    }
-
-    /**
-     *
-     * @return longitude
-     */
-    public float getLongitude() {
-        return longitude;
-    }
-
-    /**
-     *
-     * @return category of the crime
-     */
-    public int getCategory() {
+    public String getCategory() {
         return category;
     }
-
-    /**
-     *
-     * @return streeID
-     */
-    public String getStreetID() {
-        return streetID;
-    }
-
-    /**
-     *
-     * @return streetName
-     */
-    public String getStreetName() {
-        return streetName;
-    }
-
-    /**
-     * setter for category
-     * @param category
-     */
-    public void setCategory(int category) {
+    public void setCategory(String category) {
         this.category = category;
-    }
-
-    /**
-     * setter for latitude
-     * @param latitude
-     */
-    public void setLatitude(float latitude) {
-        this.latitude = latitude;
-    }
-
-    /**
-     * setter longitude
-     * @param longitude
-     */
-
-    public void setLongitude(float longitude) {
-        this.longitude = longitude;
-    }
-
-    /**
-     * setter for streetID
-     * @param streetID
-     */
-    public void setStreetID(String streetID) {
-        this.streetID = streetID;
-    }
-
-    /**
-     * setter for streetName
-     * @param streetName
-     */
-    public void setStreetName(String streetName) {
-        this.streetName = streetName;
     }
 }

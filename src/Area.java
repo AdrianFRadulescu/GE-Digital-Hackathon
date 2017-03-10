@@ -1,14 +1,20 @@
 /**
  * Created by Ciprian on 03/10/17.
  */
-public class Area {
-    public String nameLocation;
+public class Location {
+	
+    public Street streetName;
     Crime[] listOfCrimes;
     int dangerQuantum;
-    public Area(String nameLocation,Crime[] listOfCrimes)
+    private String latitude;
+    private String longitude;
+    
+    public Location(Street streetName,Crime[] listOfCrimes, String latitude, String longitude)
     {
+    	this.latitude = latitude;
+    	this.longitude = longitude;
         this.listOfCrimes=listOfCrimes;
-        this.nameLocation=nameLocation;
+        this.streetName =streetName;
         this.dangerQuantum=dangerZone();
     }
 
