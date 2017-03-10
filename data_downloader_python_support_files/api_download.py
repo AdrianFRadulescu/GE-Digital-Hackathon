@@ -60,6 +60,7 @@ url_data = str(url_data)
 
 file = open("temporaries/single_query_response", "w")
 
-#file.write(url_data)
+file.write(url_data)
+file.write("\n")
 
-pprint(url_data, file)
+#pprint(url_data, file)
