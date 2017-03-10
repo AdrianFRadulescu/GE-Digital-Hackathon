@@ -5,13 +5,19 @@ public class Area {
     Location location;
     Crime[] listOfCrimes;
     int dangerQuantum;
+
     public Area(Location location,Crime[] listOfCrimes)
     {
         this.listOfCrimes=listOfCrimes;
-        this.location=location;
+        this.location=location ;
         this.dangerQuantum=dangerZone();
     }
-
+    public boolean isDangerous(int dangerThreshold)
+    {
+        if(this.dangerQuantum<dangerThreshold)
+            return false;
+        return true;
+    }
     public int dangerZone()
     {
         int danger=0;
