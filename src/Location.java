@@ -4,16 +4,35 @@
 public class Location {
     public String nameLocation;
     Crime[] listOfCrimes;
+    int dangerQuantum;
     public Location(String nameLocation,Crime[] listOfCrimes)
     {
         this.listOfCrimes=listOfCrimes;
         this.nameLocation=nameLocation;
+        this.dangerQuantum=dangerZone();
     }
 
-    public void displayAllCrimes()
+    public int dangerZone()
+    {
+        int danger=0;
+        for (int i=0;i<listOfCrimes.length;i++)
+        {
+         danger+=listOfCrimes[i].danger();
+        }
+        return danger;
+    }
+    public String toStringAllCrimes()
     {
         String allCrimes="";
         for(int i=0;i<listOfCrimes.length;i++)
-            listOfCrimes[i];
+            allCrimes+=listOfCrimes[i]+"\n";
+        return allCrimes;
+
     }
+    public int getDangerQuantum()
+    {
+        return this.dangerQuantum;
+
+    }
+
 }

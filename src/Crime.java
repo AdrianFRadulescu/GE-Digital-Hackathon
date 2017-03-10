@@ -14,9 +14,9 @@ public class Crime implements CrimeCathegory {
         this.streetID=streetID;
     }
 
-    public int danger(int category)
+    public int danger()
     {
-        switch (category)
+        switch (this.category)
         {
             case (AntiSocialbehaviour):
                 return 1;
