@@ -2,13 +2,13 @@
  * Created by Ciprian on 03/10/17.
  */
 public class Area {
-    public String nameLocation;
+    Location location;
     Crime[] listOfCrimes;
     int dangerQuantum;
-    public Area(String nameLocation,Crime[] listOfCrimes)
+    public Area(Location location,Crime[] listOfCrimes)
     {
         this.listOfCrimes=listOfCrimes;
-        this.nameLocation=nameLocation;
+        this.location=location;
         this.dangerQuantum=dangerZone();
     }
 
