@@ -13,6 +13,10 @@ public class Location {
         this.streetName =streetName;
     }
 
+    public String toString() {
+    	return "StreetName: " + streetName + "\n" + "longitude: " + longitude + "\n" + "latitude: " + latitude ;
+    }
+    
     public String getLatitude() {
         return latitude;
     }

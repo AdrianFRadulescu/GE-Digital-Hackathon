@@ -43,6 +43,12 @@ public class Crime {
                 return 0;
         }
     }
+    
+    public String toString(){
+    	String toString = locationName.toString()  + "\n" + "CrimeId" + id + "\n"+ outcomeStatus.toString()+ "category: " + category + "\n" + "persistentId: " + persistentId + "\n" + "locationSubtype: " + locationSubtype +"\n"+ "date " + date;
+    	//System.out.println(toString);
+    	return toString;
+    }
     public String getCategory() {
         return category;
     }
