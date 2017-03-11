@@ -26,7 +26,7 @@ public class Triangle {
         return ((b1 == b2) && (b2 == b3));
     }
     
-class fPoint
+static class fPoint
 {
     float x,y;
     fPoint(float x, float y)
