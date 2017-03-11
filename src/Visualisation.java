@@ -13,15 +13,17 @@ public class Visualisation  {
         g.drawLine(ax,ay,cx,cy);
 
     }
-    public  void main()
+    public  void main(String[] args)
     {
         JFrame frame=new JFrame("Visualisation");
         frame.setSize(800,800);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         DrawTriangle triangle=new DrawTriangle(100,100,100,200,200,100);
+        JLabel background=new JLabel(new ImageIcon("res/image.jpg"));
+        frame.add(background);
         frame.add(triangle);
-
+        frame.setVisible(true);
 
 
 
