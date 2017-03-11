@@ -9,5 +9,22 @@ public class OutcomeStatus {
 		this.category = category;
 		this.date = date;
 	}
+	
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public String getDate() {
+		return date;
+	}
+	
+	public String toString(){
+		return "category: "+category +"\n"+ "date: " + date + "\n";
+	}
 
 }
