@@ -1,6 +1,10 @@
-import org.json.JSONObject;
-
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.json.JSONObject;
 
 /**
  * Created by adrian_radulescu1997 on 10/03/2017.
@@ -14,6 +18,7 @@ public class CrimeURLDataParsing {
     private static String[] fLocationParameters = {"street", "longitude", "latitude"};
     private static String[] fStreetParameters   = {"id", "name"};
     private static String[] fOutcomeResult      = {"category", "date"};
+    private static ArrayList<String> arrayList = new ArrayList<String>();
 
 
 
@@ -31,7 +36,22 @@ public class CrimeURLDataParsing {
      */
 
     public static ArrayList<String> readFile(String _pathToFile){
-
+    	try {
+		  	int i = 0 ;			  	
+			File file = new File(System.getProperty("user.dir") +"/"+ "src/"+ _pathToFile);
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			String line;
+			while (( line = bufferedReader.readLine()) != null) {
+				arrayList.add(line);				
+				//i++;
+			}
+			fileReader.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	return arrayList;
     }
 
 }
