@@ -1,10 +1,10 @@
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import org.json.JSONObject;
 
 /**
  * Created by adrian_radulescu1997 on 10/03/2017.
@@ -21,12 +21,51 @@ public class CrimeURLDataParsing {
     private static ArrayList<String> arrayList = new ArrayList<String>();
 
 
+	/**
+	 * Uses the org.json parser in order to transform a given string into a json object
+	 * and the convert it to a crime object
+	 * @param _args
+	 * @return
+	 */
 
-    public static void parse(String _args){
+	public static Crime parseCrime(String _args){
 
         JSONObject obj = new JSONObject(_args);
-        System.out.println(obj.getJSONObject("location").getString("latitude"));
 
+        //Location
+		System.out.println(obj.getJSONObject("location").getJSONObject("street").get("id"));
+		Street str = new Street(
+				obj.getJSONObject("location").getJSONObject("street").getInt("id"),
+				obj.getJSONObject("location").getJSONObject("street").getString("name")
+		);
+		Location loc = new Location(
+				str,
+				obj.getJSONObject("location").getString("latitude"),
+				obj.getJSONObject("location").getString("longitude"));
+		OutcomeStatus outcomeStatus = null;
+
+		if(obj.isNull("outcome_status")) {
+
+			outcomeStatus = new OutcomeStatus(
+					obj.getJSONObject("outcome_status").getString("category"),
+					obj.getJSONObject("outcome_status").getString("date")
+			);
+		}
+
+		System.out.println(obj.getJSONObject("location").getString("longitude"));
+		System.out.println(obj.getJSONObject("location").getString("latitude"));
+
+		return new Crime(
+				loc,
+				outcomeStatus,
+				obj.getString("category"),
+				obj.getString("persistent_id"),
+				obj.getInt("id"),
+				obj.getString("location_subtype"),
+				obj.getString("month")
+		);
+		
+		
     }
 
     /**
@@ -37,8 +76,8 @@ public class CrimeURLDataParsing {
 
     public static ArrayList<String> readFile(String _pathToFile){
     	try {
-		  	int i = 0 ;			  	
-			File file = new File(System.getProperty("user.dir") +"/"+ "src/"+ _pathToFile);
+		  	int i = 0 ;
+			File file = new File(System.getProperty("user.dir") +"/"+ "data_downloader_python_support_files/temporaries/"+ _pathToFile);
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			String line;
@@ -53,5 +92,23 @@ public class CrimeURLDataParsing {
 		}
     	return arrayList;
     }
+
+	/**
+	 * Extracts crime objects form a file
+	 * @param _pathToFile
+	 * @return
+	 */
+
+	public static ArrayList<Crime> extractCrimeDataFromFile(String _pathToFile){
+
+    	ArrayList<Crime> result = new ArrayList<>();
+
+    	for (String crimeString: readFile(_pathToFile)){
+    		result.add(parseCrime(crimeString));
+		}
+
+    	return result;
+	}
+
 
 }

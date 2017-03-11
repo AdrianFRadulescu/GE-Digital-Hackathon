@@ -13,7 +13,8 @@ public class Visualisation  {
         g.drawLine(ax,ay,cx,cy);
 
     }
-    public  void main(String[] args)
+
+    public static void main()
     {
         JFrame frame=new JFrame("Visualisation");
         frame.setSize(800,800);
@@ -26,6 +27,6 @@ public class Visualisation  {
         frame.setVisible(true);
 
 
-
+        frame.add(triangle);
     }
 }

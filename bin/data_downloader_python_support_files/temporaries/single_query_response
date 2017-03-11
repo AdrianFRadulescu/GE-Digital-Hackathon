@@ -1,6 +1,0 @@
-("[{'location_type': 'Force', 'outcome_status': {'category': 'Crime reported', "
- "'date': '2012-02'}, 'location': {'longitude': '-1.143042', 'latitude': "
- "'52.643950', 'street': {'name': 'On or near Abbey Gate', 'id': 884227}}, "
- "'month': '2012-02', 'category': 'other-theft', 'persistent_id': "
- "'38c1343f22ae8b609702e61c019c437f85e960b6ddce191690342ea98cca3092', "
- "'context': '', 'id': 10468694, 'location_subtype': ''}]")

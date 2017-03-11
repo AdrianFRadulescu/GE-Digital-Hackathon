@@ -9,11 +9,11 @@ public class Crime {
 	private OutcomeStatus outcomeStatus;
 	private String category;
 	private String persistentId;
-	private String id;
+	private Integer id;
 	private String locationSubtype;
 	private String date;
 	
-    public Crime(Location locationName, OutcomeStatus outcomeStatus, String category, String persistentId, String id, String locationSubtype, String date )
+    public Crime(Location locationName, OutcomeStatus outcomeStatus, String category, String persistentId, Integer id, String locationSubtype, String date )
     {
         this.locationName = locationName;
         this.outcomeStatus = outcomeStatus;
@@ -27,21 +27,31 @@ public class Crime {
     {
         switch (this.category)
         {
-            case ("AntiSocialbehaviour"):
+            case ("anti-social-behaviour"):
                 return 1;
             case ("burglary"):
                 return 5;
             case ("robbery"):
                 return 20;
-            case "vehicleCrime":
+            case "vehicle-crime":
                 return 5;
-            case "violentCrime":
+            case "violent-crime":
                 return 30;
-            case "otherCrime":
+            case "other-crime":
                 return 10;
+            case "other-theft":
+            	return 3;
+            case "criminal-damage-arson":
+            	return 15;
              default:
                 return 0;
         }
+    }
+    
+    public String toString(){
+    	String toString = locationName.toString()  + "\n" + "CrimeId: " + id + "\n"+ outcomeStatus.toString()+ "\n " + "category: " + category + "\n" + "persistentId: " + persistentId + "\n" + "locationSubtype: " + locationSubtype +"\n"+ "date " + date + "\n";
+    	//System.out.println(toString);
+    	return toString;
     }
     public String getCategory() {
         return category;
@@ -49,4 +59,40 @@ public class Crime {
     public void setCategory(String category) {
         this.category = category;
     }
+    public void setDate(String date) {
+		this.date = date;
+	}
+    public void setId(Integer id) {
+		this.id = id;
+	}
+    public void setLocationName(Location locationName) {
+		this.locationName = locationName;
+	}
+    public void setLocationSubtype(String locationSubtype) {
+		this.locationSubtype = locationSubtype;
+	}
+    public void setOutcomeStatus(OutcomeStatus outcomeStatus) {
+		this.outcomeStatus = outcomeStatus;
+	}
+    public void setPersistentId(String persistentId) {
+		this.persistentId = persistentId;
+	}
+    public String getDate() {
+		return date;
+	}
+    public Integer getId() {
+		return id;
+	}
+    public Location getLocationName() {
+		return locationName;
+	}
+    public String getLocationSubtype() {
+		return locationSubtype;
+	}
+    public OutcomeStatus getOutcomeStatus() {
+		return outcomeStatus;
+	}
+    public String getPersistentId() {
+		return persistentId;
+	}
 }
