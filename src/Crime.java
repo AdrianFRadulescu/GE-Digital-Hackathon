@@ -9,11 +9,11 @@ public class Crime {
 	private OutcomeStatus outcomeStatus;
 	private String category;
 	private String persistentId;
-	private String id;
+	private Integer id;
 	private String locationSubtype;
 	private String date;
 	
-    public Crime(Location locationName, OutcomeStatus outcomeStatus, String category, String persistentId, String id, String locationSubtype, String date )
+    public Crime(Location locationName, OutcomeStatus outcomeStatus, String category, String persistentId, Integer id, String locationSubtype, String date )
     {
         this.locationName = locationName;
         this.outcomeStatus = outcomeStatus;
