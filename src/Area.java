@@ -5,6 +5,7 @@ public class Area {
     public String nameLocation;
     Crime[] listOfCrimes;
     int dangerQuantum;
+
     public Area(String nameLocation,Crime[] listOfCrimes)
     {
         this.listOfCrimes=listOfCrimes;
