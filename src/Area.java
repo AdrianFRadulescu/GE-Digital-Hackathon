@@ -2,16 +2,17 @@
  * Created by Ciprian on 03/10/17.
  */
 public class Area {
-    Location location;
+    public String nameLocation;
     Crime[] listOfCrimes;
     int dangerQuantum;
 
     Triangle triangle;
     public Area(String nameLocation,Crime[] listOfCrimes,Triangle triangle)
 
+
     {
         this.listOfCrimes=listOfCrimes;
-        this.location=location;
+        this.nameLocation=nameLocation;
         this.dangerQuantum=dangerZone();
         this.triangle=triangle;
     }
