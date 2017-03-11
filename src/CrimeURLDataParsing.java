@@ -64,6 +64,8 @@ public class CrimeURLDataParsing {
 				obj.getString("location_subtype"),
 				obj.getString("month")
 		);
+		
+		
     }
 
     /**

@@ -27,25 +27,27 @@ public class Crime {
     {
         switch (this.category)
         {
-            case ("AntiSocialbehaviour"):
+            case ("anti-social-behaviour"):
                 return 1;
             case ("burglary"):
                 return 5;
             case ("robbery"):
                 return 20;
-            case "vehicleCrime":
+            case "vehicle-crime":
                 return 5;
-            case "violentCrime":
+            case "violent-crime":
                 return 30;
-            case "otherCrime":
+            case "other-crime":
                 return 10;
+            case "other-theft":
+            	return 3;
              default:
                 return 0;
         }
     }
     
     public String toString(){
-    	String toString = locationName.toString()  + "\n" + "CrimeId" + id + "\n"+ outcomeStatus.toString()+ "category: " + category + "\n" + "persistentId: " + persistentId + "\n" + "locationSubtype: " + locationSubtype +"\n"+ "date " + date;
+    	String toString = locationName.toString()  + "\n" + "CrimeId: " + id + "\n"+ outcomeStatus.toString()+ "\n " + "category: " + category + "\n" + "persistentId: " + persistentId + "\n" + "locationSubtype: " + locationSubtype +"\n"+ "date " + date + "\n";
     	//System.out.println(toString);
     	return toString;
     }

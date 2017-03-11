@@ -24,7 +24,7 @@ public class OutcomeStatus {
 	}
 	
 	public String toString(){
-		return "category: "+category +"\n"+ "date: " + date + "\n";
+		return "category: " + category +"\n"+ "date: " + date;
 	}
 
 }
