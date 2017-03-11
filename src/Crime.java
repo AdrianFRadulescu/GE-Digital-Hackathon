@@ -49,4 +49,40 @@ public class Crime {
     public void setCategory(String category) {
         this.category = category;
     }
+    public void setDate(String date) {
+		this.date = date;
+	}
+    public void setId(Integer id) {
+		this.id = id;
+	}
+    public void setLocationName(Location locationName) {
+		this.locationName = locationName;
+	}
+    public void setLocationSubtype(String locationSubtype) {
+		this.locationSubtype = locationSubtype;
+	}
+    public void setOutcomeStatus(OutcomeStatus outcomeStatus) {
+		this.outcomeStatus = outcomeStatus;
+	}
+    public void setPersistentId(String persistentId) {
+		this.persistentId = persistentId;
+	}
+    public String getDate() {
+		return date;
+	}
+    public Integer getId() {
+		return id;
+	}
+    public Location getLocationName() {
+		return locationName;
+	}
+    public String getLocationSubtype() {
+		return locationSubtype;
+	}
+    public OutcomeStatus getOutcomeStatus() {
+		return outcomeStatus;
+	}
+    public String getPersistentId() {
+		return persistentId;
+	}
 }

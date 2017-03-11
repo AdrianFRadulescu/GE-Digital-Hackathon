@@ -24,4 +24,22 @@ public class Location {
     public Street getStreet() {
         return streetName;
     }
+    
+    public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+    
+    public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+    
+    public void setStreetName(Street streetName) {
+		this.streetName = streetName;
+	}
+    
+    public Street getStreetName() {
+		return streetName;
+	}
+    
+    
 }
