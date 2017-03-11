@@ -12,5 +12,7 @@ public class Test {
         for(int i = 0; i< arrayList.size(); i++) {
         	System.out.println(arrayList.get(i));
         }
+        
+        //ArrayList<Crime> arrayListCrime = CrimeURLDataParsing.extractCrimeDataFromFile("single_query_response");
     }
 }

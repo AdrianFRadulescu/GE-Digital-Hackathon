@@ -41,6 +41,8 @@ public class Crime {
                 return 10;
             case "other-theft":
             	return 3;
+            case "criminal-damage-arson":
+            	return 15;
              default:
                 return 0;
         }
