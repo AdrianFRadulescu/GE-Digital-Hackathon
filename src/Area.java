@@ -5,11 +5,15 @@ public class Area {
     Location location;
     Crime[] listOfCrimes;
     int dangerQuantum;
-    public Area(Location location,Crime[] listOfCrimes)
+
+    Triangle triangle;
+    public Area(String nameLocation,Crime[] listOfCrimes,Triangle triangle)
+
     {
         this.listOfCrimes=listOfCrimes;
         this.location=location;
         this.dangerQuantum=dangerZone();
+        this.triangle=triangle;
     }
 
     public int dangerZone()

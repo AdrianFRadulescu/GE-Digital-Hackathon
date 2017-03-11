@@ -1,24 +1,19 @@
 /**
  * Created by Ciprian on 03/10/17.
  */
-
-/**
- * Class that structures the information of a crime that has been comitted
- */
-
 public class Crime {
-
-
-
+    
+	
+	
 	private Location locationName;
 	private OutcomeStatus outcomeStatus;
 	private String category;
 	private String persistentId;
-	private String id;
+	private Integer id;
 	private String locationSubtype;
 	private String date;
-
-    public Crime(Location locationName, OutcomeStatus outcomeStatus, String category, String persistentId, String id, String locationSubtype, String date )
+	
+    public Crime(Location locationName, OutcomeStatus outcomeStatus, String category, String persistentId, Integer id, String locationSubtype, String date )
     {
         this.locationName = locationName;
         this.outcomeStatus = outcomeStatus;
@@ -28,10 +23,6 @@ public class Crime {
         this.locationSubtype = locationSubtype;
     }
 
-    /**
-     *
-     * @return what the quantum of danger for that crime is
-     */
     public int danger()
     {
         switch (this.category)
