@@ -21,8 +21,14 @@ public class CrimeURLDataParsing {
     private static ArrayList<String> arrayList = new ArrayList<String>();
 
 
+	/**
+	 * Uses the org.json parser in order to transform a given string into a json object
+	 * and the convert it to a crime object
+	 * @param _args
+	 * @return
+	 */
 
-    public static Crime parseCrime(String _args){
+	public static Crime parseCrime(String _args){
 
         JSONObject obj = new JSONObject(_args);
 
@@ -68,8 +74,8 @@ public class CrimeURLDataParsing {
 
     public static ArrayList<String> readFile(String _pathToFile){
     	try {
-		  	int i = 0 ;			  	
-			File file = new File(System.getProperty("user.dir") +"/"+ "src/"+ _pathToFile);
+		  	int i = 0 ;
+			File file = new File(System.getProperty("user.dir") +"/"+ "data_downloader_python_support_files/temporaries/"+ _pathToFile);
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			String line;
@@ -84,5 +90,23 @@ public class CrimeURLDataParsing {
 		}
     	return arrayList;
     }
+
+	/**
+	 * Extracts crime objects form a file
+	 * @param _pathToFile
+	 * @return
+	 */
+
+	public static ArrayList<Crime> extractCrimeDataFromFile(String _pathToFile){
+
+    	ArrayList<Crime> result = new ArrayList<>();
+
+    	for (String crimeString: readFile(_pathToFile)){
+    		result.add(parseCrime(crimeString));
+		}
+
+    	return result;
+	}
+
 
 }
